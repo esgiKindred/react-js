@@ -1,40 +1,30 @@
 @import "bulma/css/bulma.css";
 
-.App {
-  text-align: center;
+@font-face {
+  font-family: Blanka;
+  src: local("Blanka"),
+  local("Blanka"),
+  url(../public/fonts/Blanka-Regular.otf);
+  font-weight: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-Logo{
+  font-family: Blanka;
+  font-weight: 400;
+  font-size: 48px;
+  background: -webkit-linear-gradient(225deg, #038C7F 0%, #025959 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-Header{
+  padding: 0.5rem
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-Header i{
+  font-size: 48px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
