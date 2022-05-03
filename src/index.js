@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+
+} from "react-router-dom";
+import {Dashboard} from "./routes/dashboard";
+import {Campaign} from "./routes/campaign";
+import {Mission} from "./routes/mission";
+import {Users} from "./routes/users";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<App />}>
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="campaign" element={<Campaign />} />
+                  <Route path="mission" element={<Mission />} />
+                  <Route path="users" element={<Users />} />
+              </Route>
+          </Routes>
+      </BrowserRouter>
   </React.StrictMode>
 );
 
