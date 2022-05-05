@@ -1,7 +1,8 @@
 import {Component} from "react";
 import {environment} from "../environment";
+import {ReactSession} from "react-client-session";
 
-export class Users extends Component {
+export class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,14 +34,18 @@ export class Users extends Component {
 
     componentDidMount() {
 
-        fetch(environment.api + 'users?page=1',{ method: 'GET',
-            headers: {
-                'Content-Type':'application/json',
-                'Accept':'application/json'
-            },
+        ReactSession.set("username", "Bob");
+        ReactSession.set("token", "test");
+
+
+        var myHeaders = new Headers();
+        myHeaders.append('Content-Type','application/json')
+        myHeaders.append('Accept','application/json')
+        var myInit = { method: 'GET',
+            headers: myHeaders,
             mode: 'cors',
-            cache: 'default',
-        }).then((response) =>{
+            cache: 'default' };
+        fetch(environment.api + 'users?page=1',myInit).then((response) =>{
             response.json().then(
                 (result) => {
                     console.log(result)
