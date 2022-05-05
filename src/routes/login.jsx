@@ -81,6 +81,14 @@ class Login extends Component {
                     console.log(result)
                   if(result.token){
                       alert(result.token)
+
+                      const userInfo = parseJwt(result.token);
+                      console.log(userInfo);
+                      ReactSession.set("username",userInfo.username);
+                      ReactSession.set("token",result.token);
+                      ReactSession.set("roles",userInfo.roles);
+
+
                       this.props.navigate("/dashboard");
                   } else{
                       alert(result.message)
@@ -97,6 +105,18 @@ class Login extends Component {
 
 
 }
+
+function parseJwt (token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+};
+
+
 function LoginWithNavigate(props) {
     let navigate = useNavigate();
     return <Login {...props} navigate={navigate} />

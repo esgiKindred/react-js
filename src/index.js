@@ -17,7 +17,10 @@ import * as serviceWorker from "./serviceWorkerRegistration";
 import {Register} from "./routes/register";
 import LoginWithNavigate from "./routes/login";
 
-
+//librairie pour stocker les info du token user
+import {ReactSession} from "react-client-session";
+import AppWithNavigate from "./App";
+ReactSession.setStoreType("localStorage");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +29,7 @@ root.render(
           <Routes>
               <Route path="login" element={<LoginWithNavigate />} />
               <Route path="register" element={<Register />} />
-              <Route path="/" element={<App />}>
+              <Route path="/" element={<AppWithNavigate />}>
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="campaign" element={<Campaign />} />
                   <Route path="mission" element={<Mission />} />

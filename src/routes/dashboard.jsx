@@ -1,5 +1,6 @@
 import {Component} from "react";
 import {environment} from "../environment";
+import {ReactSession} from "react-client-session";
 
 export class Dashboard extends Component {
     constructor(props) {
@@ -19,7 +20,13 @@ export class Dashboard extends Component {
             return <div>Chargement…</div>;
         } else {
             return (
-               <h1>Mes Cagnottes</h1>
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>{ReactSession.get("roles")}</p>
+                    <p>{ReactSession.get("token")}</p>
+
+                </div>
+
             );
         }
     }
