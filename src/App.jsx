@@ -4,8 +4,12 @@ import './App.css';
 import {Link, Outlet, useNavigate} from "react-router-dom";
 import { ReactSession } from 'react-client-session';
 import {Component} from "react";
+import {Drawer} from "./components/drawer/drawer";
+
 
  class App extends Component {
+
+
     constructor(props) {
 
 
@@ -22,22 +26,13 @@ import {Component} from "react";
 
             return (
                 <div>
-                    <div>
                         <div className="d-flex align-items-center justify-content-between w-100 App-Header">
-              <span className="icon">
-                <i className="bi bi-list"></i>
-             </span>
+                            <Drawer></Drawer>
                             <h1 className="App-Logo">Kindred</h1>
                             <p>{ReactSession.get("username")}</p>
                             <button onClick={this.handleLogout}>Déconnection</button>
                         </div>
-                        <nav>
-                            <Link to="/dashboard">Dashboard</Link>
-                            <Link to="/campaign">Campaign</Link>
-                            <Link to="/mission">Mission</Link>
-                            <Link to="/users">Users</Link>
-                        </nav>
-                    </div>
+
                     <Outlet />
                 </div>
             );
@@ -48,6 +43,8 @@ import {Component} from "react";
      handleLogout(){
          ReactSession.set("token",'');
          this.props.navigate("/login");
+
+
     }
 
 }
