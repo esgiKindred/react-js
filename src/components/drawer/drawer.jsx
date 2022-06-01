@@ -2,6 +2,7 @@
 import {Component} from "react";
 import {Link} from "react-router-dom";
 import './drawer.css';
+import {MenuLink} from "../menu-link/menu-link";
 
 export class Drawer extends Component {
     constructor(props) {
@@ -17,23 +18,15 @@ export class Drawer extends Component {
             return(
                 <div className="drawer">
                     <span onClick={() => this.setState({ open: false })} className="icon">
-                    <i className="bi bi-list"></i>
+                        <i className="bi bi-x-circle"></i>
                     </span>
-
-
-
-                        <Link to="/dashboard">Dashboard</Link>
-                        <Link to="/campaign">Campaign</Link>
-                        <Link to="/mission">Mission</Link>
-                        <Link to="/users">Users</Link>
-
-                        <p className="txt-995">Dashboard</p>
-                        <p className="txt-995">Profil</p>
-                        <p className="txt-995">Profil Parent</p>
-                        <p className="txt-995">Contrat</p>
-                        <p className="txt-995">Mission</p>
-                        <p className="txt-995">Recompenses</p>
-                        <p className="txt-1088">Recompenses Parent</p>
+                    <MenuLink routeDestination='/dashboard' routeName="Dashboard"></MenuLink>
+                    <MenuLink routeDestination='/user' routeName="Profil"></MenuLink>
+                    <MenuLink routeDestination='/user-parent' routeName="Profil Parent"></MenuLink>
+                    <MenuLink routeDestination='/campaign' routeName="Contrat"></MenuLink>
+                    <MenuLink routeDestination='/mission' routeName="Mission"></MenuLink>
+                    <MenuLink routeDestination='/rewards' routeName="Recompenses"></MenuLink>
+                    <MenuLink routeDestination='/rewards-parent' routeName="Recompense Parent"></MenuLink>
                 </div>
             )
         } else {
