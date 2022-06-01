@@ -1,0 +1,12 @@
+.drawer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 100%;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+
+}
