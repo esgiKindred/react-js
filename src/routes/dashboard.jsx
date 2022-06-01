@@ -1,13 +1,7 @@
 import { Component } from "react";
 import { environment } from "../environment";
 import { ReactSession } from "react-client-session";
-import {
-  ButtonPrimary,
-  ButtonDanger,
-  ButtonSecondary,
-} from "../components/BoutonCtaSimple/button";
-import Input from "../components/FormInput/input";
-import Textarea from "../components/Textarea/textarea";
+import { Button, Form } from "react-bulma-components";
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -32,12 +26,13 @@ export class Dashboard extends Component {
           <p>{ReactSession.get("roles")}</p>
           <p>{ReactSession.get("token")}</p>
 
-          <ButtonPrimary text="test" />
-          <ButtonDanger text={"test"} />
-          <ButtonSecondary text={"test"} />
+          <Button color={"primary"}>Test</Button>
+          <Button color={"secondary"}>Test</Button>
+          <Button color={"danger"}>Test</Button>
           <hr />
-          <Input placeholder={"input"} />
-          <Textarea placeholder={"textarea"} />
+          <Form.Label>Input example</Form.Label>
+          {/* <Textarea placeholder={"textarea"} />
+          <Select placeholder={"textarea"} /> */}
         </div>
       );
     }

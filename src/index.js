@@ -1,46 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-} from "react-router-dom";
-import {Dashboard} from "./routes/dashboard";
-import {Campaign} from "./routes/campaign";
-import {Mission} from "./routes/mission";
-import {Users} from "./routes/users";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Dashboard } from "./routes/dashboard";
+import { Campaign } from "./routes/campaign";
+import { Mission } from "./routes/mission";
+import { Users } from "./routes/users";
 
 import * as serviceWorker from "./serviceWorkerRegistration";
-import {Register} from "./routes/register";
-import LoginWithNavigate from "./routes/login";
+import { Register } from "./routes/register";
+import LoginWithNavigate from "./routes/login/login";
 
 //librairie pour stocker les info du token user
-import {ReactSession} from "react-client-session";
+import { ReactSession } from "react-client-session";
 import AppWithNavigate from "./App";
 ReactSession.setStoreType("localStorage");
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
-          <Routes>
-              <Route path="login" element={<LoginWithNavigate />} />
-              <Route path="register" element={<Register />} />
-              <Route path="/" element={<AppWithNavigate />}>
-                  <Route path="dashboard" element={<Dashboard />} />
-                  <Route path="campaign" element={<Campaign />} />
-                  <Route path="mission" element={<Mission />} />
-                  <Route path="users" element={<Users />} />
-                  <Route
-                      path="*"
-                      element={<Dashboard to="/" />}
-                  />
-              </Route>
-          </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="login" element={<LoginWithNavigate />} />
+        <Route path="register" element={<Register />} />
+        <Route path="/" element={<AppWithNavigate />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="campaign" element={<Campaign />} />
+          <Route path="mission" element={<Mission />} />
+          <Route path="users" element={<Users />} />
+          <Route path="*" element={<Dashboard to="/" />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
@@ -49,4 +42,3 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 serviceWorker.register();
-

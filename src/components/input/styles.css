@@ -1,6 +1,6 @@
 input {
   background-color: var(--secondary) !important;
-  color: var(--secondary-dark) !important;
+  color: var(--primary) !important;
   border-color: transparent !important;
 }
 

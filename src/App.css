@@ -1,4 +1,6 @@
 @import "bulma/css/bulma.css";
+@import "/src/components/bouton/styles.css";
+@import "/src/components/input/styles.css";
 
 @font-face {
   font-family: Blanka;
@@ -39,4 +41,8 @@
 
 .App-link {
   color: #61dafb;
+}
+
+body {
+  background-color: var(--secondary);
 }

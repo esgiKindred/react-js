@@ -1,0 +1,30 @@
+.container.title h1.App-Logo {
+  font-size: 10vh;
+  padding: 10vh 0;
+  text-align: center;
+  margin: 0;
+}
+
+.container.main {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 50px 50px 0 0;
+}
+
+.login-title {
+  font-size: 3vh;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+#login-form {
+  margin-top: 40px;
+}
+
+#login-form .field {
+  margin-top: 30px;
+}
+
+#login-form .field.field.is-grouped {
+  justify-content: space-between;
+}
