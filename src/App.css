@@ -12,7 +12,9 @@
   --secondary: #fcfaf6;
   --secondary-dark: #daccb1;
   --tertiary: #f2c12e;
+  --tertiary-dark: #e6b00f;
   --quaternary: #f27d72;
+  --quaternary-dark: #ef6457;
   --white: #ffffff;
 
   --primary-gradient: linear-gradient(var(--primary), var(--primary-dark));
