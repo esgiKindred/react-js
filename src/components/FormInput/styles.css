@@ -1,0 +1,14 @@
+input {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-dark) !important;
+  border-color: transparent !important;
+}
+
+input:hover {
+  border-color: rgb(230 176 15 / 25%) !important;
+}
+
+input:focus {
+  border-color: transparent !important;
+  box-shadow: 0 0 0 0.125em rgb(230 176 15 / 35%) !important;
+}

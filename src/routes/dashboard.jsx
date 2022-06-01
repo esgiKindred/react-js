@@ -6,6 +6,8 @@ import {
   ButtonDanger,
   ButtonSecondary,
 } from "../components/BoutonCtaSimple/button";
+import Input from "../components/FormInput/input";
+import Textarea from "../components/Textarea/textarea";
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -33,6 +35,9 @@ export class Dashboard extends Component {
           <ButtonPrimary text="test" />
           <ButtonDanger text={"test"} />
           <ButtonSecondary text={"test"} />
+          <hr />
+          <Input placeholder={"input"} />
+          <Textarea placeholder={"textarea"} />
         </div>
       );
     }
